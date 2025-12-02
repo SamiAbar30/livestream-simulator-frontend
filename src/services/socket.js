@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 
 // Connect to the backend server
-const socket = io(import.meta.env.VITE_API_URL || "http://localhost:3000");
+const socket = io("https://livestream-simulator.vercel.app/");
 
 export const subscribeToViewers = (callback) => {
     socket.on('viewersUpdate', (data) => {
@@ -40,3 +40,4 @@ export const disconnectSocket = () => {
 };
 
 export default socket;
+
